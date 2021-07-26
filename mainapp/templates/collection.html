@@ -18,11 +18,13 @@
                 {% for item in product%}
                 <div class="col mb-5 mob-card">
                     <div class="card h-100">
+                        <img class="card-img-top" src="/media/{{ item.image }}" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">{{ item.title }}</h5>
+                                <h4 class="fw-bolder">{{ item.name }}</h4>
+                                <h5 class="fw-bolder">{{ item.short_desc }}</h5>
                                 <!-- Product price-->
                                 {{ item.price }} рублей
                             </div>
