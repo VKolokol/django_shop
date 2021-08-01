@@ -1,0 +1,28 @@
+
+{% extends 'index.html' %}
+
+{% block content %}
+{% load static %}
+
+       <header class="bg-dark py-5 red-color">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Профиль</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Изменить содержимое профиля</p>
+            </div>
+        </div>
+    </header>
+    <div class="middle container">
+            <div class="user_avatar mb-5" style="text-align: center">
+                <img class="rounded-circle" src=" /media/{{ user.avatar }}" width="33%">
+            </div>
+            <div class="order">
+                <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    {{ edit_form.as_p }}
+                    <button class="but for-mob" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+ {% endblock content %}
