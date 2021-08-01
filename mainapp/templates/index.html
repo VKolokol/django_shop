@@ -33,14 +33,36 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" aria-current="page" href="/">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'collection'%}">Collection</a>
+                        <a class="nav-link" href="{% url 'collection'%}">Коллекция</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contacts'%}">Contacts</a>
+                        <a class="nav-link" href="{% url 'contacts'%}">Контакты</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link"  href="{% url 'auth:edit' %}">
+                           Пользователь: {{ user.first_name|default:'' }}
+                        </a>
+                    </li>
+                    {% endif %}
+
+
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'auth:logout' %}">Выйти</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'auth:login' %}">Войти</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'auth:register' %}">Регистрация</a>
+                        </li>
+                        {% endif %}
+
                 </ul>
             </div>
         </div>
