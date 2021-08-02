@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+{% load static %}
+<!-- Header-->
+<header class="bg-dark py-5 red-color">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder"> <b>404 - черта! </b> Что-то пошлоа не так... </h1>
+            <p class="lead fw-normal text-white-50 mb-0">Вернись-ка на <a href="/">главную</a></p>
+        </div>
+    </div>
+</header>
+
+<!-- Section-->
+<div class="container" style="text-align: center;">
+    <img src="{% static 'image/not_found.png' %}" alt="not_found">
+</div>
+
+
+{% endblock content %}
+<!-- Footer-->
+
