@@ -108,6 +108,16 @@ a:hover{
     letter-spacing: 0.05em;
     color: #FFF8F8;
 }
+.nav-pills .nav-link.active {
+    background-color: #6c0f0f;
+}
+.nav-link, .nav-link:hover {
+    color: white;
+}
+.nav-link:hover{
+    color:grey;
+}
+
 .category {
     margin-top: 45px;
     margin-bottom: 13px;

@@ -3,6 +3,7 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(verbose_name='категория', max_length=25, unique=True)
+    slug = models.CharField(verbose_name='адрес', max_length=25, blank=True, default='Null')
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
